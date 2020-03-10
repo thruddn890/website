@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>홀짝</title>
+  <meta charset="utf-8">
+  <link href="https://fonts.googleapis.com/earlyaccess/notosanskr.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/each.css">
+</head>
+<body>
+  <div class="container">
+    <div class="card">13</div>
+    <div class="card">3</div>
+    <div class="card">14</div>
+    <div class="card">7</div>
+    <div class="card">22</div>
+    <div class="card">38</div>
+    <div class="card">17</div>
+    <div class="card">15</div>
+    <div class="card">11</div>
+    <div class="card">10</div>
+    <div class="card">22</div>
+    <div class="card">31</div>
+    <div class="card">32</div>
+    <div class="card">41</div>
+    <div class="card">10</div>
+    <div class="card">85</div>
+    <div class="card">17</div>
+    <div class="card">82</div>
+    <div class="card">70</div>
+    <div class="card">5</div>
+    <div class="card">53</div>
+    <div class="card">7</div>
+    <div class="card">4</div>
+    <div class="card">29</div>
+    <div class="card">1</div>
+    <div class="card">2</div>
+    <div class="card">8</div>
+    <div class="card">6</div>
+    <div class="card">12</div>
+    <div class="card">14</div>
+    <div class="card">16</div>
+    <div class="card">100</div>
+    
+    <div style="clear: both;"></div>
+  </div>
+
+  <div class="buttons">
+    <button id="even-btn">짝수</button>
+    <button id="odd-btn">홀수</button>
+  </div>
+
+  <script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+<script>
+//짝수 부분 내용
+$('#even-btn').on('click', function() {
+    $('.card').removeClass('selected');    
+    $('.card').each(function() {
+     if (Number($(this).text()) % 2 === 0) {    
+       $(this).addClass('selected');    
+    }
+  });
+});  
+
+//홀수 부분 내용
+$('#odd-btn').on('click', function() {
+    $('.card').removeClass('selected');
+    $('.card').each(function() {
+      if (Number($(this).text()) % 2 === 1) {
+        $(this).addClass('selected');
+    }
+  });
+});
+</script>
+</body>
+</html>

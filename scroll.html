@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>스크롤 효과 수업</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="css/scroll.css"
+    </head>
+    <body>
+      
+     
+        <div class="top">
+            Fade away......
+        </div>
+
+      <button class="go-to-top">Go To Top</button>  
+      <script
+      src="https://code.jquery.com/jquery-3.2.1.min.js"
+      integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+      crossorigin="anonymous"></script>
+
+
+      <script>
+          $(window).on('scroll', function() {
+          // 1 - 0 / 200 = 1 - 0 = 1
+          // 1 - 100 / 200 = 1- 0.5 = 0.5
+          // 1 - 200 / 200 = 1 - 1 = 0
+          $('.top').css('opacity', 1 - $(window).scrollTop(
+          ) / $('.top').height());
+          })
+
+         $('.go-to-top').on('click', function() {
+           $('html, body').animate({scrollTop: 0}, 500); //0은 가고싶은 위치쓰고 500은 가는데 걸리는 시간을 설정하는 것임!
+          //$(window).scrollTop(0);  
+         })
+
+      </script>
+
+
+
+
+    </body>
+</html>

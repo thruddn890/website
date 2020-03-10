@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>애니메이션 효과</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="css/animate.css" />
+    </head>
+    <body>
+        <button>Start Animation</button>
+        <div></div>
+
+        <script 
+        src="https://code.jquery.com/jquery-3.2.1.min.js" 
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" 
+        crossorigin="anonymous"></script>
+
+        <!--jQueryUI 코드 추가-->
+        <script
+        src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
+        integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
+        crossorigin="anonymous"></script>
+
+        <!--애니메이션 작성내용 -->
+        <script>
+            //1번 애니메이션 - 왼쪽에 250공간을 남기고 오른쪽으로 옮겨짐
+            // $(document).ready(function() {
+            //     $("button").on('click', function() {
+            //         $("div").animate({left: '250px'});
+            //     });
+            // });
+
+            //2번 애니메이션 - 위와 같은데 추가로 이미지색이 조금 흐려짐 더 밝게!!
+            //3번째줄의 내용처럼 한번에 같은 길이에 작성하면 동시에 효과가 적용이된다!
+            // $(document).ready(function() {
+            //     $('button').on('click', function() {
+            //         $('div').animate({left: '250px', opacity: '0.5'});
+            //     });
+            // });    
+
+            //3번 애니메이션 - 위와 같은데 효과 순서 변경
+            //opacity의 내용을 같은줄에 적지 않고 따로따로 다른줄에 적용하면
+            //이동을 먼저 한 후에 그다음 opacity가 적용된다.
+            //==> 즉 이렇게 작성 
+            //$('div').animate({left: '250px'});
+            //$('div').animate({opacity: '0.5'}); 이렇게 다른줄에 각각 작성
+
+            // $(document).ready(function() {
+            //     $('button').on('click', function() {
+            //         $('div').animate({left: '250px'});
+            //         $('div').animate({opacity: '0.5'});
+            //     });
+            // });    
+        
+            //4번 애니메이션 - 버튼을 누를 때 마다 계속해서 이동!!
+            // $(document).ready(function() {
+            //     $('button').on('click', function() {
+            //         $('div').animate({left: '+=250px'});
+            //         // $('div').animate({opacity: '0.5'});
+            //     });
+            // });
+        //left인데 오른쪽으로 가는 이유: left값이 250px이 될때까지 오른쪽으로 간다고 생각!!
+            //그 외 애니메이션 효과 적용하기
+            $(document).ready(function() {
+                $('button').on('click', function() {
+                    $('div').animate({left: '250px'}, 1000, 'easeOutElastic');
+                })
+            })
+        </script>
+    </body>
+</html>

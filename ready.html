@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>jQuery</title>
+        <meta charset="utf-8">
+        <script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous">
+        </script>
+        
+        <script>
+            $(document).ready(function() {
+                $('#hello').on('click', function() {
+                alert($('#hello').text());
+                $('#hello').css('background', '#7f8ff4');
+                });
+            });
+            // function whenReady() {
+
+            // $('#hello').on('click', sayHello);
+            // function sayHello() {
+            //     alert($('#hello').text());
+            //     $('#hello').css('background', '#7f8ff4');
+            // }
+        </script>
+    </head>
+    <body>
+        <button id="hello">Hello Sogogi</button>
+
+        <ul id="todo-list">
+            <li id="cleaning" class="item">청소</li>
+            <li id="coding" class="item important">코딩</li>
+            <li id="homework" class="item important">숙제</li>
+            <li id="movie" class="item">영화</li>
+            <li id="vitamin" class="item">비타민</li>
+            <li id="gym" class="item">헬스장</li>
+            <li id="reading" class="item important">독서</li>            
+        </ul>
+    </body>
+</html>
